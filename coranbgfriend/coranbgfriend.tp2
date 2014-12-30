@@ -1,8 +1,9 @@
 /*
  * "Coran's BG Extended Friendship Talks"
- * Version 3 Combined Tutu/BGT installer
+ * Version 4 Combined Tutu/BGT/BGEE installer
  * Domi Sotto, updated by berelinde
- * December 7, 2007
+ * 2014-12-08
+ * BGEE compatibility update v4 by AstroBryGuy
 */
 
 /* Backup folder */
@@ -13,12 +14,12 @@ AUTHOR ~Domi Sotto, domi@gibberlings3.net~
 /* enable all error messages; nothing suppressed. comment this out for release version */
 //MODDER
 
-VERSION ~v3~
+VERSION ~v4-PR20141208~
 
 README ~coranbgfriend/readme-coranbg.html~
 
 ALWAYS
-  ACTION_IF FILE_EXISTS_IN_GAME ~FW0100.are~ THEN BEGIN
+  ACTION_IF GAME_IS ~tutu tutu_totsc~ THEN BEGIN
     /* Tell the player it is using Tutu stuff */
     PRINT @0
     /* shutdown of D and BAF after BG content */
@@ -30,7 +31,7 @@ ALWAYS
     OUTER_SPRINT "CORAN_BCS" "_CORAN"
   END
 
-  ACTION_IF FILE_EXISTS_IN_GAME ~AR7200.are~ THEN BEGIN
+  ACTION_IF GAME_IS ~bgt~ THEN BEGIN
     /* Tell the player it is using BGT stuff */
     PRINT @1
     /* shutdown of D and BAF after BG content */
@@ -42,11 +43,34 @@ ALWAYS
     OUTER_SPRINT "CORAN_BCS" "CORAN"
   END
   
-  ACTION_IF NOT (FILE_EXISTS_IN_GAME ~AR7200.are~) AND NOT (FILE_EXISTS_IN_GAME ~FW0100.are~) THEN BEGIN
-    /* Tell the player it is not Tutu or BGT */
+  ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+    /* Tell the player it is using BGEE stuff */
+    PRINT @4
+    /* shutdown of D and BAF after BG content */
+    OUTER_SPRINT ~BGT_VAR~ ~~
+    /* Platform-Specific Filenames */
+    OUTER_SPRINT "CORAN_JOINED" "CORANJ"
+    OUTER_SPRINT "CORAN_BANTER" "BCORAN"
+    OUTER_SPRINT "GARRICK_BANTER" "BGARRI"
+    OUTER_SPRINT "CORAN_BCS" "CORAN"
+    /* Convert .tra file character sets to UTF-8 for BGEE */
+    ACTION_DEFINE_ARRAY p#noconvert BEGIN setup END
+  	ACTION_DEFINE_ARRAY p#reload BEGIN END
+  	LAF HANDLE_CHARSETS
+    	INT_VAR
+      		infer_charset = 1
+    	STR_VAR
+      		tra_path = EVAL ~%MOD_FOLDER%/tra~
+      		noconvert_array = p#noconvert
+      		reload_array = p#reload
+  	END
+  END
+
+  ACTION_IF !(GAME_IS ~tutu tutu_totsc bgt bgee~) THEN BEGIN
+    /* Tell the player it is not Tutu, BGT, or BGEE */
     FAIL @2
   END
-  
+    
 END
 
 /* Language Settings */
