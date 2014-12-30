@@ -39,7 +39,7 @@
 @38   = ~That's the attitude I share. Nobody ever locked me out.~
 @39   = ~Are you sure? I didn't think you were all that good with stealth and locks. ~
 @40   = ~Why is that? ~
-@41   = ~And if they did, you would not admit it seeing how your reputation of a thief depends on it. ~
+@41   = ~And if they did, you would not admit it seeing how your reputation as a thief depends on it. ~
 @42   = ~Ha-ha! But you must be clumsy, <CHARNAME>. Nobody ever locked me out.~
 @43   = ~I am not clumsy. I simply chose to obey the laws. ~
 @44   = ~I am not clumsy. I simply chose to obey the laws. Well, at least in this case. ~
@@ -109,7 +109,7 @@
 @108  = ~I wouldn't recommend it. After all, I don't even know all the details. I wished to question him further about it, but at that very moment the dwarf's wager arrived...~
 @109  = ~Go on!~
 @110  = ~What, that's not all?!~
-@111  = ~Mmgh, Coran, I don't want to listen any more of it.~
+@111  = ~Mmgh, Coran, I don't want to listen to any more of it.~
 @112  = ~Ah, yes, I wished to question him further about it as well, but at that very moment the dwarf's wager arrived...~
 @113  = ~The poor bastard had swallowed a sea sponge, hoping to release the trapped mead gradually... but instead the whole thing got emptied at once when he got punched. At least that's what he said when he was finally able to talk.~
 @114  = ~Right.~
@@ -204,12 +204,12 @@
 @203  = ~Yes, you did. I was trying to focus. ~
 @204  = ~Ah, well, this was... different.~
 @205  = ~You went on a fishing trip with Coran. As expected, Coran proved to be detrimental to staying still for long hours, waiting on a fish to bite. However, he was doing his best to keep the mood festive, so at least once you were distracted by a whirlwind of wild gypsies joining you.
-He also swears that you've pulled out the biggest trout anyone ever saw. The number of the flagons of wine consumed and fair maidens seduced is left off the record.~
-@206  = ~You went on a fishing trip with Coran. As expected, Coran proved to be detrimental to staying still for long hours, waiting on a fish to bite. However, he was doing his best to keep the mood festive, so at least once you were distracted by a whirlwind of wild gypsies joining you. He also swears that you've pulled out the biggest trout anyone ever saw. The number of attractive strangers caught in nets of passion and the flagons of wine consumed is left off the record. And it is nobody's business if anything 'happened' between Coran and you.~
+He also swears that you've pulled out the biggest trout anyone ever saw. The number of the flagons of wine consumed and fair maidens seduced are left off the record.~
+@206  = ~You went on a fishing trip with Coran. As expected, Coran proved to be detrimental to staying still for long hours, waiting on a fish to bite. However, he was doing his best to keep the mood festive, so at least once you were distracted by a whirlwind of wild gypsies joining you. He also swears that you've pulled out the biggest trout anyone ever saw. The number of attractive strangers caught in nets of passion and the flagons of wine consumed are left off the record. And it is nobody's business if anything 'happened' between Coran and you.~
 @207  = ~Ah, I hope you enjoyed it as much as I did.~
-@208  = ~You went on a hunting trip with Coran. It turned out to be quite an escapade, in the course of which you killed a couple of deer, numerous pheasants, one very gruff bear, three hungry wolves that should have though better off next time when they decided that you were just the thing for a spot of breakfast, and a curious carrion crawler.
-The number of the flagons of wine consumed and fair maidens seduced is left off the record.~
-@209  = ~ You went on a hunting trip with Coran. It turned out to be quite an escapade, in the course of which you killed a couple of deer, numerous pheasants, one very gruff bear, three hungry wolves that should have though better off next time when they decided that you were just the thing for a spot of breakfast, and a curious carrion crawler. The number of attractive strangers caught in nets of passion and the flagons of wine consumed is left off the record. And it is nobody's business if anything 'happened' between Coran and you.~
+@208  = ~You went on a hunting trip with Coran. It turned out to be quite an escapade, in the course of which you killed a couple of deer, numerous pheasants, one very gruff bear, three hungry wolves (that should have thought better of it when they decided that you were just the thing for a spot of breakfast), and a curious carrion crawler.
+The number of the flagons of wine consumed and fair maidens seduced are left off the record.~
+@209  = ~You went on a hunting trip with Coran. It turned out to be quite an escapade, in the course of which you killed a couple of deer, numerous pheasants, one very gruff bear, three hungry wolves (that should have thought better of it when they decided that you were just the thing for a spot of breakfast), and a curious carrion crawler. The number of attractive strangers caught in nets of passion and the flagons of wine consumed are left off the record. And it is nobody's business if anything 'happened' between Coran and you.~
 @210  = ~Ah, finally. A well-deserved break between fighting. Do tell, <CHARNAME>, whom do you fancy more: blondes, brunettes or red-heads?~
 @211  = ~Lo! Isn't it a goblin over there?~
 @212  = ~I go for blondes. ~
@@ -220,7 +220,7 @@ The number of the flagons of wine consumed and fair maidens seduced is left off 
 @217  = ~Hmm, not sure. What about you?~
 @218  = ~Ah, finally. A well-deserved break between fighting. Do tell, <CHARNAME>, whom do you fancy more: blonds, brunettes or red-heads?~
 @219  = ~I go for blonds. ~
-@220  = ~It's brunets that I fancy. ~
+@220  = ~It's brunettes that I fancy. ~
 @221  = ~Isn't it wonderful to travel with a company? One can while away the slow hours between battles in pleasant banter.~
 @222  = ~Exactly. Ah, did that Red Wizardess I met in Waterdeep a few years back teach me a thing or two!~
 @223  = ~Next two hundred years or so... at least.~
@@ -231,7 +231,7 @@ The number of the flagons of wine consumed and fair maidens seduced is left off 
 @228  = ~What virility! So, how many seasons do you think you can go on like that? ~
 @229  = ~I've heard enough of this nonsense.~
 @230  = ~Why, never! Spring I leave to whimsical flights of fancy.~
-@231  = ~Ah, the blue-haired elven maidens and bald Thaivyan sorceress?~
+@231  = ~Ah, the blue-haired elven maidens and bald Thayvian sorceress?~
 @232  = ~What virility! So, how many seasons do you think you can go on like that?~
 @233  = ~You see, my friend, I decided to dedicate a year's season to each of the tempting guilds. I love brunettes the most in the summer, the redheads in autumn, and blondes in the winter.~
 @234  = ~What about spring? Do you take a holiday from wenching?~
@@ -281,7 +281,7 @@ The number of the flagons of wine consumed and fair maidens seduced is left off 
 @278  = ~Aha, I can see now why you are so eager to get to him... Ha-ha! I'm only joking, sweetling, only joking!~
 @279  = ~Ah, well. Can't always be perfect.~
 @280  = ~Wouldn't it be wonderful if a deadly match could be turned into a match of passion?~
-@281  = ~Are you sure your arch-enemy is not an erinys or a succubus?~
+@281  = ~Are you sure your arch-enemy is not an erinyes or a succubus?~
 @282  = ~I am positive that it's a huge male.~
 @283  = ~Yes, I am positive, but there was a lady in his war-band.~
 @284  = ~Coran, please, spare me your idiotic fantasies! ~
@@ -289,8 +289,8 @@ The number of the flagons of wine consumed and fair maidens seduced is left off 
 @286  = ~Lighten up, my friend, lighten up. Wouldn't it be wonderful if a deadly match could be turned into a match of passion?~
 @287  = ~Oh, and I wouldn't have thought that you could be so easily disturbed after your adventures.~
 @288  = ~You need to do something about your priorities. I think it's ever so much better to look and listen first, and kill later. Then, who knows, maybe a deadly match can turn into a match of passion.~
-@289  = ~Ah, my kindred spirit! Yes, turning the deadly match into a match of passion... Are you sure your arch-enemy is not an erinys or a succubus?~
-@290  = ~Who's talking about killing?! I am thinking about turning the deadly match into a match of passion... Are you sure your arch-enemy is not an erinys or a succubus?~
+@289  = ~Ah, my kindred spirit! Yes, turning the deadly match into a match of passion... Are you sure your arch-enemy is not an erinyes or a succubus?~
+@290  = ~Who's talking about killing?! I am thinking about turning the deadly match into a match of passion... Are you sure your arch-enemy is not an erinyes or a succubus?~
 @291  = ~Ah, I'm very certain that giving in to a seductress always has a winning side to it.~
 @292  = ~Talk to me after you get chewed up by a vampire or a hagspawn.~
 @293  = ~You're hopeless. ~

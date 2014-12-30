@@ -9,6 +9,7 @@ IF %BGT_VAR%
 Gender(Player1,FEMALE)
 GlobalGT("P#CFriendTalk","GLOBAL",6)
 Global("P#CoFriendshipNew","GLOBAL",0)
+!Global("X#CoranHanaliRune","GLOBAL",10)
 OR(2)
 Global("P#CoranRomancePath","GLOBAL",0)
 Global("P#CoranRomanceInactive","GLOBAL",1)
