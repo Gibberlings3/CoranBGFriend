@@ -1,0 +1,26 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        StartCutSceneMode()
+        CutSceneId("Coran")
+        SetInterrupt(FALSE)
+	    FadeToColor([0.0],0)
+        DayNight(NOON)
+        SmallWait(1)
+        DayNight(NOON)
+        SmallWait(1)
+        DayNight(NOON)
+        SmallWait(1)
+        DayNight(NOON)
+        SmallWait(1)
+        DayNight(NOON)
+        SmallWait(1)
+        DayNight(NOON)
+        SmallWait(1)
+        DayNight(NOON)
+        SetGlobal("P#CoranFish","GLOBAL",1)
+        SetInterrupt(TRUE)
+        StartDialogueNoSet(Player1)
+        EndCutSceneMode()
+END
