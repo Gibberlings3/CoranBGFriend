@@ -14,7 +14,7 @@ AUTHOR ~Domi Sotto, domi@gibberlings3.net~
 /* enable all error messages; nothing suppressed. comment this out for release version */
 //MODDER
 
-VERSION ~v4-PR-20150116~
+VERSION ~v4~
 
 README ~coranbgfriend/readme-coranbg.html~
 
