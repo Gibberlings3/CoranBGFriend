@@ -9,12 +9,13 @@
 /* Backup folder */
 BACKUP ~coranbgfriend/backup~
 
-AUTHOR ~Domi Sotto, domi@gibberlings3.net~
+//AUTHOR ~Domi Sotto, domi@gibberlings3.net~
+SUPPORT ~https://www.gibberlings3.net/forums/forum/141-coran39s-friendship-mod/~
 
 /* enable all error messages; nothing suppressed. comment this out for release version */
 //MODDER
 
-VERSION ~v4~
+VERSION ~v5~
 
 README ~coranbgfriend/readme-coranbg.html~
 
@@ -53,20 +54,33 @@ ALWAYS
     OUTER_SPRINT "CORAN_BANTER" "BCORAN"
     OUTER_SPRINT "GARRICK_BANTER" "BGARRI"
     OUTER_SPRINT "CORAN_BCS" "CORAN"
-    /* Convert .tra file character sets to UTF-8 for BGEE */
-    ACTION_DEFINE_ARRAY p#noconvert BEGIN setup END
-  	ACTION_DEFINE_ARRAY p#reload BEGIN END
-  	LAF HANDLE_CHARSETS
+  END
+  
+  ACTION_IF GAME_IS ~eet~ THEN BEGIN
+    /* Tell the player it is using BGEE stuff */
+    PRINT @5
+    /* shutdown of D and BAF after BG content */
+    OUTER_SPRINT ~BGT_VAR~ ~!Global("endofbg1","GLOBAL",2)~
+    /* Platform-Specific Filenames */
+    OUTER_SPRINT "CORAN_JOINED" "CORANJ"
+    OUTER_SPRINT "CORAN_BANTER" "BCORAN"
+    OUTER_SPRINT "GARRICK_BANTER" "BGARRI"
+    OUTER_SPRINT "CORAN_BCS" "CORAN"
+  END
+
+  /* Convert .tra file character sets to UTF-8 for BGEE */
+  ACTION_DEFINE_ARRAY p#noconvert BEGIN setup END
+  ACTION_DEFINE_ARRAY p#reload BEGIN END
+  LAF HANDLE_CHARSETS
     	INT_VAR
       		infer_charset = 1
     	STR_VAR
       		tra_path = EVAL ~%MOD_FOLDER%/tra~
       		noconvert_array = p#noconvert
       		reload_array = p#reload
-  	END
   END
 
-  ACTION_IF !(GAME_IS ~tutu tutu_totsc bgt bgee~) THEN BEGIN
+  ACTION_IF !(GAME_IS ~tutu tutu_totsc bgt bgee eet~) THEN BEGIN
     /* Tell the player it is not Tutu, BGT, or BGEE */
     FAIL @2
   END
@@ -77,7 +91,7 @@ END
 AUTO_TRA ~coranbgfriend/tra/%s~
 LANGUAGE ~English~ ~english~ ~coranbgfriend/tra/english/setup.tra~
 LANGUAGE ~Deutsch~ ~german~ ~coranbgfriend/tra/german/setup.tra~
-//LANGUAGE ~Russian~ ~russian~ ~coranbgfriend/tra/russian/setup.tra~
+LANGUAGE ~Russian~ ~russian~ ~coranbgfriend/tra/english/setup.tra~
 //LANGUAGE ~Polish~ ~polish~ ~coranbgfriend/tra/polish/setup.tra~
 //LANGUAGE ~Spanish~ ~spanish~ ~coranbgfriend/tra/spanish/setup.tra~
 //LANGUAGE ~French~ ~french~ ~coranbgfriend/tra/french/setup.tra~
