@@ -1,5 +1,5 @@
-/* If BG1NPC is not installed, */
-/* this block starts the talks immediately. */
+// If BG1NPC is not installed,
+// this block starts the talks immediately.
 IF %BGT_VAR%
   InParty(Myself)
   Global("P#CoFriendshipNew","GLOBAL",0)

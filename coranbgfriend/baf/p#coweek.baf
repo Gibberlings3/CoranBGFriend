@@ -1,4 +1,4 @@
-/* Cutscene Script for P#COWEEK.BAF */
+// Cutscene Script for P#COWEEK.BAF
 
 IF
     True()

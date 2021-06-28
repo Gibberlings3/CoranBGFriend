@@ -1,10 +1,10 @@
-/* Contents: */
-/* Extended Friendship Talks Included (male) */
-/* Extended Friendship Talks Included (female) */
-/* Extended Friendship Talks Activated */
-/* Extended Friendship Talks Initiated */
+// Contents:
+// Extended Friendship Talks Included (male)
+// Extended Friendship Talks Included (female)
+// Extended Friendship Talks Activated
+// Extended Friendship Talks Initiated
+// Extended Friendship Talks Included (female)
 
-/* Extended Friendship Talks Included (female) */
 IF %BGT_VAR%
 Gender(Player1,FEMALE)
 GlobalGT("P#CFriendTalk","GLOBAL",6)
@@ -19,7 +19,7 @@ THEN
     RealSetGlobalTimer("P#CoFriendshipNewTimer","GLOBAL",3600)
 END
 
-/* Extended Friendship Talks Included (male) */
+// Extended Friendship Talks Included (male)
 IF %BGT_VAR%
   Gender(Player1,MALE)
   GlobalGT("P#CFriendTalk","GLOBAL",8)
@@ -30,7 +30,7 @@ THEN
     SetGlobal("P#CoFriendshipNew","GLOBAL",1)
 END
 
-/* Extended Friendship Talks Activated */
+// Extended Friendship Talks Activated
 IF %BGT_VAR%
   InParty(Myself)
   RealGlobalTimerExpired("P#CoFriendshipNewTimer","GLOBAL")
@@ -61,7 +61,7 @@ THEN
     IncrementGlobal("P#CoFriendshipNew","GLOBAL",1)
 END
 
-/* Extended Friendship Talks Initiated */
+// Extended Friendship Talks Initiated
 IF %BGT_VAR%
   InParty(Myself)
   !StateCheck(Myself,CD_STATE_NOTVALID)

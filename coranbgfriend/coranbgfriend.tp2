@@ -1,31 +1,29 @@
-/*
- * "Coran's BG Extended Friendship Talks"
- * Version 4 Combined Tutu/BGT/BGEE installer
- * Domi Sotto, updated by berelinde
- * 2015-01-16
- * BGEE compatibility update v4 by AstroBryGuy
-*/
+// "Coran's BG Extended Friendship Talks"
+// Version 4 Combined Tutu/BGT/BGEE installer
+// Domi Sotto, updated by berelinde
+// 2015-01-16
+// BGEE compatibility update v4 by AstroBryGuy
 
-/* Backup folder */
+// Backup folder
 BACKUP ~coranbgfriend/backup~
 
 //AUTHOR ~Domi Sotto, domi@gibberlings3.net~
 SUPPORT ~https://www.gibberlings3.net/forums/forum/141-coran39s-friendship-mod/~
 
-/* enable all error messages; nothing suppressed. comment this out for release version */
+// enable all error messages; nothing suppressed. comment this out for release version
 //MODDER
 
-VERSION ~v5~
+VERSION ~v5.1~
 
 README ~coranbgfriend/readme-coranbg.html~
 
 ALWAYS
   ACTION_IF GAME_IS ~tutu tutu_totsc~ THEN BEGIN
-    /* Tell the player it is using Tutu stuff */
+    // Tell the player it is using Tutu stuff
     PRINT @0
-    /* shutdown of D and BAF after BG content */
+    // shutdown of D and BAF after BG content
     OUTER_SPRINT ~BGT_VAR~ ~~
-    /* Platform-Specific Filenames */
+    // Platform-Specific Filenames
     OUTER_SPRINT "CORAN_JOINED" "_CORANJ"
     OUTER_SPRINT "CORAN_BANTER" "_BCORAN"
     OUTER_SPRINT "GARRICK_BANTER" "_BGARRI"
@@ -33,11 +31,11 @@ ALWAYS
   END
 
   ACTION_IF GAME_IS ~bgt~ THEN BEGIN
-    /* Tell the player it is using BGT stuff */
+    // Tell the player it is using BGT stuff
     PRINT @1
-    /* shutdown of D and BAF after BG content */
+    // shutdown of D and BAF after BG content
     OUTER_SPRINT ~BGT_VAR~ ~!Global("endofbg1","GLOBAL",2)~
-    /* Platform-Specific Filenames */
+    // Platform-Specific Filenames
     OUTER_SPRINT "CORAN_JOINED" "CORANJ"
     OUTER_SPRINT "CORAN_BANTER" "BCORAN"
     OUTER_SPRINT "GARRICK_BANTER" "BGARRI"
@@ -45,11 +43,11 @@ ALWAYS
   END
   
   ACTION_IF GAME_IS ~bgee~ THEN BEGIN
-    /* Tell the player it is using BGEE stuff */
+    // Tell the player it is using BGEE stuff
     PRINT @4
-    /* shutdown of D and BAF after BG content */
+    // shutdown of D and BAF after BG content
     OUTER_SPRINT ~BGT_VAR~ ~~
-    /* Platform-Specific Filenames */
+    // Platform-Specific Filenames
     OUTER_SPRINT "CORAN_JOINED" "CORANJ"
     OUTER_SPRINT "CORAN_BANTER" "BCORAN"
     OUTER_SPRINT "GARRICK_BANTER" "BGARRI"
@@ -57,18 +55,18 @@ ALWAYS
   END
   
   ACTION_IF GAME_IS ~eet~ THEN BEGIN
-    /* Tell the player it is using BGEE stuff */
+    // Tell the player it is using BGEE stuff
     PRINT @5
-    /* shutdown of D and BAF after BG content */
+    // shutdown of D and BAF after BG content
     OUTER_SPRINT ~BGT_VAR~ ~!Global("endofbg1","GLOBAL",2)~
-    /* Platform-Specific Filenames */
+    // Platform-Specific Filenames
     OUTER_SPRINT "CORAN_JOINED" "CORANJ"
     OUTER_SPRINT "CORAN_BANTER" "BCORAN"
     OUTER_SPRINT "GARRICK_BANTER" "BGARRI"
     OUTER_SPRINT "CORAN_BCS" "CORAN"
   END
 
-  /* Convert .tra file character sets to UTF-8 for BGEE */
+  // Convert .tra file character sets to UTF-8 for BGEE
   ACTION_DEFINE_ARRAY p#noconvert BEGIN setup END
   ACTION_DEFINE_ARRAY p#reload BEGIN END
   LAF HANDLE_CHARSETS
@@ -81,13 +79,13 @@ ALWAYS
   END
 
   ACTION_IF !(GAME_IS ~tutu tutu_totsc bgt bgee eet~) THEN BEGIN
-    /* Tell the player it is not Tutu, BGT, or BGEE */
+    // Tell the player it is not Tutu, BGT, or BGEE
     FAIL @2
   END
     
 END
 
-/* Language Settings */
+// Language Settings
 AUTO_TRA ~coranbgfriend/tra/%s~
 LANGUAGE ~English~ ~english~ ~coranbgfriend/tra/english/setup.tra~
 LANGUAGE ~Deutsch~ ~german~ ~coranbgfriend/tra/german/setup.tra~
@@ -98,17 +96,17 @@ LANGUAGE ~Russian~ ~russian~ ~coranbgfriend/tra/english/setup.tra~
 
 BEGIN @3
 
-  /* Tells other mods BG1NPC Core is installed */
+  // Tells other mods BG1NPC Core is installed
   COPY ~coranbgfriend/p#component.xx~ ~override/p#coranfriend.g3~
 
-  /* STATE.IDS patching to ToB, courtesy CamDawg */
-  /* adds custom IsValidForPartyDialogue state */
+  // STATE.IDS patching to ToB, courtesy CamDawg
+  // adds custom IsValidForPartyDialogue state
   APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
 
-  /* dialogue */
+  // dialogue
   COMPILE EVALUATE_BUFFER ~coranbgfriend/dlg/p#coranft.d~
 
-  /* scripts */
+  // scripts
   EXTEND_TOP ~%CORAN_BCS%.bcs~ ~coranbgfriend/baf/p#coranbgfriendship.baf~
       EVALUATE_BUFFER
 
@@ -117,6 +115,6 @@ BEGIN @3
       EVALUATE_BUFFER
   END
 
-  /* cutscenes */
+  // cutscenes
   COMPILE ~coranbgfriend/baf/p#coweek.baf~
   COMPILE ~coranbgfriend/baf/p#cowee1.baf~
