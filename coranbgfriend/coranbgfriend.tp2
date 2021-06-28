@@ -94,7 +94,7 @@ LANGUAGE ~Russian~ ~russian~ ~coranbgfriend/tra/english/setup.tra~
 //LANGUAGE ~Spanish~ ~spanish~ ~coranbgfriend/tra/spanish/setup.tra~
 //LANGUAGE ~French~ ~french~ ~coranbgfriend/tra/french/setup.tra~
 
-BEGIN @3
+BEGIN @3 LABEL "Domi-CoranBGFriend-Main"
 
   // Tells other mods BG1NPC Core is installed
   COPY ~coranbgfriend/p#component.xx~ ~override/p#coranfriend.g3~
