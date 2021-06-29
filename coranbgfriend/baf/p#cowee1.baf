@@ -5,7 +5,7 @@ THEN
         StartCutSceneMode()
         CutSceneId("Coran")
         SetInterrupt(FALSE)
-	    FadeToColor([0.0],0)
+        FadeToColor([0.0],0)
         DayNight(NOON)
         SmallWait(1)
         DayNight(NOON)
