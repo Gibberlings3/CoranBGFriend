@@ -5,7 +5,7 @@
 
 This mod expands Coran's Friendship talk sequence, adding up to eighteen (18) new banters with the protagonist (and one potential comment by Garrick) for a player character who is not in an active romance with him. If you have The BG1 NPC Project installed, they begin playing after the last regular friendship talk. If the player started and interrupted Coran's The BG1 NPC Project romance, the friendship sequence should initiate after that. If you do not have The BG1 NPC Project installed, they become available immediately.
 
-This mod is designed for use on the following platforms: Tutu, BGT and Baldur's Gate Enhanced Edition (BGEE).
+This mod is designed for use on the following platforms: Tutu, BGT, Baldur's Gate Enhanced Edition (BGEE) and Baldur's Gate: Enhanced Edition Trilogy (EET).
 
 ## Installation:
 

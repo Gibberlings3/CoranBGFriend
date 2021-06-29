@@ -1,4 +1,4 @@
-/* Cutscene Script for P#COWEEK.BAF */
+// Cutscene Script for P#COWEEK.BAF
 
 IF
     True()
@@ -7,7 +7,7 @@ THEN
         StartCutSceneMode()
         CutSceneId("Coran")
         SetInterrupt(FALSE)
-	   FadeToColor([0.0],0)
+        FadeToColor([0.0],0)
         DayNight(NOON)
         SmallWait(1)
         DayNight(NOON)
