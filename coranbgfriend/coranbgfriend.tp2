@@ -7,22 +7,22 @@
 // Backup folder
 BACKUP "weidu_external\backup\coranbgfriend" // move backup folder outside of the main mod data folder, change only you mod data folder name
 
-//AUTHOR ~Domi Sotto, domi@gibberlings3.net~
-SUPPORT ~https://www.gibberlings3.net/forums/forum/141-coran39s-friendship-mod/~
+//AUTHOR "Domi Sotto, domi@gibberlings3.net"
+SUPPORT "https://www.gibberlings3.net/forums/forum/141-coran39s-friendship-mod/"
 
 // enable all error messages; nothing suppressed. comment this out for release version
 //MODDER
 
-VERSION ~v5.1~
+VERSION "v5.1"
 
-README ~coranbgfriend/readme-coranbg.html~
+README "coranbgfriend/readme-coranbg.html"
 
 ALWAYS
-    ACTION_IF GAME_IS ~tutu tutu_totsc~ THEN BEGIN
+    ACTION_IF GAME_IS "tutu tutu_totsc" THEN BEGIN
         // Tell the player it is using Tutu stuff
         PRINT @0
         // shutdown of D and BAF after BG content
-        OUTER_TEXT_SPRINT ~BGT_VAR~ ~~
+        OUTER_TEXT_SPRINT "BGT_VAR" ""
         // Platform-Specific Filenames
         OUTER_TEXT_SPRINT "CORAN_JOINED" "_CORANJ"
         OUTER_TEXT_SPRINT "CORAN_BANTER" "_BCORAN"
@@ -30,11 +30,11 @@ ALWAYS
         OUTER_TEXT_SPRINT "CORAN_BCS" "_CORAN"
     END
 
-    ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+    ACTION_IF GAME_IS "bgt" THEN BEGIN
         // Tell the player it is using BGT stuff
         PRINT @1
         // shutdown of D and BAF after BG content
-        OUTER_TEXT_SPRINT ~BGT_VAR~ ~!Global("endofbg1","GLOBAL",2)~
+        OUTER_TEXT_SPRINT "BGT_VAR" "!Global("endofbg1","GLOBAL",2)"
         // Platform-Specific Filenames
         OUTER_TEXT_SPRINT "CORAN_JOINED" "CORANJ"
         OUTER_TEXT_SPRINT "CORAN_BANTER" "BCORAN"
@@ -42,11 +42,11 @@ ALWAYS
         OUTER_TEXT_SPRINT "CORAN_BCS" "CORAN"
     END
     
-    ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+    ACTION_IF GAME_IS "bgee" THEN BEGIN
         // Tell the player it is using BGEE stuff
         PRINT @4
         // shutdown of D and BAF after BG content
-        OUTER_TEXT_SPRINT ~BGT_VAR~ ~~
+        OUTER_TEXT_SPRINT "BGT_VAR" ""
         // Platform-Specific Filenames
         OUTER_TEXT_SPRINT "CORAN_JOINED" "CORANJ"
         OUTER_TEXT_SPRINT "CORAN_BANTER" "BCORAN"
@@ -54,11 +54,11 @@ ALWAYS
         OUTER_TEXT_SPRINT "CORAN_BCS" "CORAN"
     END
     
-    ACTION_IF GAME_IS ~eet~ THEN BEGIN
+    ACTION_IF GAME_IS "eet" THEN BEGIN
         // Tell the player it is using BGEE stuff
         PRINT @5
         // shutdown of D and BAF after BG content
-        OUTER_TEXT_SPRINT ~BGT_VAR~ ~!Global("endofbg1","GLOBAL",2)~
+        OUTER_TEXT_SPRINT "BGT_VAR" "!Global("endofbg1","GLOBAL",2)"
         // Platform-Specific Filenames
         OUTER_TEXT_SPRINT "CORAN_JOINED" "CORANJ"
         OUTER_TEXT_SPRINT "CORAN_BANTER" "BCORAN"
@@ -66,7 +66,7 @@ ALWAYS
         OUTER_TEXT_SPRINT "CORAN_BCS" "CORAN"
     END
 
-    ACTION_IF !(GAME_IS ~tutu tutu_totsc bgt bgee eet~) THEN BEGIN
+    ACTION_IF !(GAME_IS "tutu tutu_totsc bgt bgee eet") THEN BEGIN
         // Tell the player it is not Tutu, BGT, or BGEE
         FAIL @2
     END
@@ -90,41 +90,41 @@ ALWAYS
 
     END
 
-    ACTION_IF (GAME_IS ~bgee eet~) THEN BEGIN
+    ACTION_IF (GAME_IS "bgee eet") THEN BEGIN
         OUTER_TEXT_SPRINT "CURRENT_TRA_PATH" "%MOD_FOLDER%/lang/"
     END
 
-    ACTION_IF !(GAME_IS ~bgee eet~) THEN BEGIN
+    ACTION_IF !(GAME_IS "bgee eet") THEN BEGIN
         OUTER_TEXT_SPRINT "CURRENT_TRA_PATH" "weidu_external/lang/%MOD_FOLDER%"
     END
 END
 
 // Language Settings
-LANGUAGE ~English~ ~english~ ~coranbgfriend/lang/english/setup.tra~
-LANGUAGE ~Deutsch~ ~german~ ~coranbgfriend/lang/german/setup.tra~
-LANGUAGE ~Russian~ ~russian~ ~coranbgfriend/lang/english/setup.tra~
+LANGUAGE "English" "english" "coranbgfriend/lang/english/setup.tra"
+LANGUAGE "Deutsch" "german" "coranbgfriend/lang/german/setup.tra"
+LANGUAGE "Russian" "russian" "coranbgfriend/lang/english/setup.tra"
 
 BEGIN @3 LABEL "Domi-CoranBGFriend-Main"
 
     // Tells other mods BG1NPC Core is installed
-    COPY ~coranbgfriend/p#component.xx~ ~override/p#coranfriend.g3~
+    COPY "coranbgfriend/p#component.xx" "override/p#coranfriend.g3"
 
     // STATE.IDS patching to ToB, courtesy CamDawg
     // adds custom IsValidForPartyDialogue state
-    APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~
+    APPEND "STATE.IDS" "0x80101FEF CD_STATE_NOTVALID" UNLESS "CD_STATE_NOTVALID"
     
     // dialogue
-    COMPILE EVALUATE_BUFFER ~coranbgfriend/dlg/p#coranft.d~ USING ~%CURRENT_TRA_PATH%/%s/P#CORANFT.tra~
+    COMPILE EVALUATE_BUFFER "coranbgfriend/dlg/p#coranft.d" USING "%CURRENT_TRA_PATH%/%s/P#CORANFT.tra"
     
     // scripts
-    EXTEND_TOP ~%CORAN_BCS%.bcs~ ~coranbgfriend/baf/p#coranbgfriendship.baf~
+    EXTEND_TOP "%CORAN_BCS%.bcs" "coranbgfriend/baf/p#coranbgfriendship.baf"
         EVALUATE_BUFFER
 
-    ACTION_IF NOT FILE_EXISTS_IN_GAME ~x#bg1npccore.g3~ THEN BEGIN
-        EXTEND_TOP ~%CORAN_BCS%.bcs~ ~coranbgfriend/baf/p#corannobg1npc.baf~
+    ACTION_IF NOT FILE_EXISTS_IN_GAME "x#bg1npccore.g3" THEN BEGIN
+        EXTEND_TOP "%CORAN_BCS%.bcs" "coranbgfriend/baf/p#corannobg1npc.baf"
         EVALUATE_BUFFER
     END
 
     // cutscenes
-    COMPILE ~coranbgfriend/baf/p#coweek.baf~
-    COMPILE ~coranbgfriend/baf/p#cowee1.baf~
+    COMPILE "coranbgfriend/baf/p#coweek.baf"
+    COMPILE "coranbgfriend/baf/p#cowee1.baf"
