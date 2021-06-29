@@ -1,10 +1,10 @@
-// If BG1NPC is not installed,
-// this block starts the talks immediately.
+// If BG1NPC is not installed, this block starts the talks immediately.
+
 IF %BGT_VAR%
-  InParty(Myself)
-  Global("P#CoFriendshipNew","GLOBAL",0)
+    InParty(Myself)
+    Global("P#CoFriendshipNew","GLOBAL",0)
 THEN 
-  RESPONSE #100
-    RealSetGlobalTimer("P#CoFriendshipNewTimer","GLOBAL",3600)
-    SetGlobal("P#CoFriendshipNew","GLOBAL",1)
+    RESPONSE #100
+        RealSetGlobalTimer("P#CoFriendshipNewTimer","GLOBAL",3600)
+        SetGlobal("P#CoFriendshipNew","GLOBAL",1)
 END
