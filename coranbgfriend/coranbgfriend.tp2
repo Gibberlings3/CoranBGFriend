@@ -58,7 +58,7 @@ ALWAYS
         // Tell the player it is using BGEE stuff
         PRINT @5
         // shutdown of D and BAF after BG content
-        OUTER_TEXT_SPRINT "BGT_VAR" "!Global("endofbg1","GLOBAL",2)"
+        OUTER_TEXT_SPRINT "BGT_VAR" ~!Global("endofbg1","GLOBAL",2)~
         // Platform-Specific Filenames
         OUTER_TEXT_SPRINT "CORAN_JOINED" "CORANJ"
         OUTER_TEXT_SPRINT "CORAN_BANTER" "BCORAN"
